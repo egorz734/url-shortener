@@ -1,8 +1,7 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
 import random
 import string
-from pydantic import BaseModel
-
 
 class URL(BaseModel):
 	url: str
@@ -23,12 +22,10 @@ async def read_root():
 def shorten_url(url: URL):
 	shortURL = make_short_url()
 	linkDict[shortURL] = url.url
-	return {"short_link": shortURL}
+	return {"short_url": shortURL}
 
 @app.get("/shorturl/{shortURL}")
 def read_url(shortURL: str):
 	if shortURL not in linkDict.keys():
-		'''return 404'''
-		print(linkDict)
-		pass
+		raise HTTPException(status_code=404, detail="URL not found")
 	return linkDict[shortURL]
