@@ -36,6 +36,13 @@ def shorten_url(url: URL):
 	conn.commit()
 	return {"short_url": shortURL}
 
+@app.get("/shorturl")
+def read_all_urls():
+	conn = sqlite3.connect('data/db.sqlite')
+	cursor = conn.cursor()
+	cursor.execute(f'SELECT * FROM urltable')
+	return cursor.fetchall()
+
 @app.get("/shorturl/{shortURL}")
 def read_url(shortURL: str):
 	conn = sqlite3.connect('data/db.sqlite')
