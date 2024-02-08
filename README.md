@@ -4,7 +4,7 @@ creates a shortcut for URL
 
 # future plans:
 ## db
-- [x] Add mysql db to store urls
+- [x] Add mysql db to store urls (https://github.com/egorz734/url-shortener/tree/sqlite-v0.1)
 - [ ] Move to postgresql (for exmaple) which is run as a separate service
 - [ ] Try adding expiration time for shortcuts
 ## docker
