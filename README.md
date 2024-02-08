@@ -12,6 +12,7 @@ creates a shortcut for URL
 ## analytics
 - [ ] collect number of time link is used
 - [ ] collect time it takes to "unfold" the shortcut link
+- [ ] add logging
 
 # example usage
 `curl -X POST -d '{"url": "https://google.com"}' -H "Content-Type: application/json" http://localhost:8000/shorturl`
