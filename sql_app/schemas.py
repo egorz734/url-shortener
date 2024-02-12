@@ -2,7 +2,6 @@ from pydantic import BaseModel
 
 
 class UrlBase(BaseModel):
-    encoded_url: str
     url: str
 
 
@@ -13,6 +12,7 @@ class UrlCreate(UrlBase):
 class Url(UrlBase):
     id: int
     owner_id: int
+    encoded_url: str
 
     class Config:
         orm_mode = True
