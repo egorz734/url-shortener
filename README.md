@@ -6,7 +6,7 @@ creates a shortcut for URL
 ## db
 - [x] Add mysql db to store urls
   - [x] Make db interaction with raw SQL (https://github.com/egorz734/url-shortener/tree/sqlite-v0.1)
-  - [ ] Add ORM with `sqlalchemy`
+  - [x] Add ORM with `sqlalchemy` (https://github.com/egorz734/url-shortener/tree/sqlite-v0.2)
 - [ ] Move to postgresql (for exmaple) which is run as a separate service
 - [ ] Try adding expiration time for shortcuts
 ## docker
